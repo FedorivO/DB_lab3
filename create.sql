@@ -10,7 +10,6 @@ CREATE TABLE City (
 );
 
 
-
 CREATE TABLE Criminal (
   city_name VARCHAR(20) NOT NULL REFERENCES City(city_name),
   shoot_id NUMBER(10, 0) NOT NULL,
@@ -22,6 +21,9 @@ CREATE TABLE Criminal (
   city_id varchar(50) NOT NULL PRIMARY KEY,
   gender_name VARCHAR(6) NOT NULL
 );
+
+
+
 
 CREATE TABLE Person (
     name VARCHAR(50) NOT NULL,
