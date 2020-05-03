@@ -14,11 +14,10 @@ CREATE TABLE Criminal (
   city_name VARCHAR(20) NOT NULL REFERENCES City(city_name),
   shoot_id NUMBER(10, 0) NOT NULL,
   name VARCHAR(50) NOT NULL,
-  date_ timestamp,
+  date_ timestamp NOT NULL PRIMARY KEY,
   manner_of_death VARCHAR(50),
   armed VARCHAR(50),
   age NUMBER(3, 0) NOT NULL,
-  city_id varchar(50) NOT NULL PRIMARY KEY,
   gender_name VARCHAR(6) NOT NULL
 );
 
