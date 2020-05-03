@@ -13,7 +13,7 @@ BEGIN
         INSERT INTO CRIMINAL (city_name, shoot_id, name, date_, manner_of_death, armed, age, gender_name)
             VALUES ('Topeka', 1344, 'Randall J. Selsor', '07-03-16',	'shot', 'undetermined',	45, 'M');
         INSERT INTO CRIMINAL (city_name, shoot_id, name, date_, manner_of_death, armed, age, gender_name)
-            VALUES ('Topeka', 3202, 'Dominique Tyrell White', '28-09-17',	'shot', 'gun',	30,	 'M');
+            VALUES ('Topeka', 3202, 'Dominique Tyrell White', '28-09-17', 'shot', 'gun', 30, 'M');
 
     END LOOP;
 
