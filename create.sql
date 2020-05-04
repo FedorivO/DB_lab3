@@ -1,6 +1,8 @@
 CREATE TABLE State (
-    state_name VARCHAR(20) NOT NULL PRIMARY KEY
+    state_name VARCHAR(20) NOT NULL 
 );
+ALTER TABLE State ADD CONSTRAINT state_pk PRIMARY KEY ( state_name );
+
 
 
 
