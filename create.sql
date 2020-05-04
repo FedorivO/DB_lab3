@@ -1,5 +1,5 @@
 CREATE TABLE State (
-    state_name VARCHAR(20) NOT NULL
+    state_name VARCHAR(200) NOT NULL
 );
 ALTER TABLE State
     ADD CONSTRAINT state_name_pk PRIMARY KEY(state_name);
@@ -7,8 +7,8 @@ ALTER TABLE State
 
 
 CREATE TABLE City (
-  state_name VARCHAR(20) NOT NULL,
-  city_name VARCHAR(20) NOT NULL 
+  state_name VARCHAR(200) NOT NULL,
+  city_name VARCHAR(200) NOT NULL 
 );
 ALTER TABLE City
     ADD CONSTRAINT city_name_pk PRIMARY KEY(city_name); 
@@ -18,7 +18,7 @@ ALTER TABLE City
 
 
 CREATE TABLE Person (
-    name VARCHAR(50) NOT NULL,
+    name VARCHAR(200) NOT NULL,
     date_ timestamp,
     manner_of_death VARCHAR(50),
     age NUMBER(3, 0) NOT NULL,
@@ -31,12 +31,12 @@ ALTER TABLE Person
     
 
 CREATE TABLE Criminal (
-  city_name VARCHAR(20) NOT NULL,
+  city_name VARCHAR(200) NOT NULL,
   shoot_id NUMBER(10, 0) NOT NULL,
-  name VARCHAR(40) NOT NULL,
+  name VARCHAR(200) NOT NULL,
   date_ TIMESTAMP NOT NULL,
-  manner_of_death VARCHAR(30),
-  armed VARCHAR(30),
+  manner_of_death VARCHAR(200),
+  armed VARCHAR(200),
   age NUMBER(3, 0) NOT NULL,
   gender_name VARCHAR(6) NOT NULL
 );
