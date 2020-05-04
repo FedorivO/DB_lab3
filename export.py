@@ -15,7 +15,7 @@ for table in tables:
     with open(f'{table}.csv', 'w', newline='') as file:
         writer = csv.writer(file, delimiter=',')
 
-        query = f'SELECT * FROM {entity}'
+        query = f'SELECT * FROM {table}'
         cursor.execute(query)
 
         row = cursor.fetchone()
