@@ -34,7 +34,7 @@ CREATE TABLE Criminal (
   city_name VARCHAR(20) NOT NULL,
   shoot_id NUMBER(10, 0) NOT NULL,
   name VARCHAR(40) NOT NULL,
-  date_ timestamp NOT NULL,
+  date_ TIMESTAMP NOT NULL,
   manner_of_death VARCHAR(30),
   armed VARCHAR(30),
   age NUMBER(3, 0) NOT NULL,
@@ -46,5 +46,3 @@ ALTER TABLE Criminal
     ADD CONSTRAINT city_name_fk FOREIGN KEY(city_name) REFERENCES City(city_name);
 ALTER TABLE Criminal
     ADD CONSTRAINT date__fk FOREIGN KEY(date_) REFERENCES Person(date_);
-
-
