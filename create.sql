@@ -1,7 +1,7 @@
 CREATE TABLE State (
-    state_name VARCHAR(20) NOT NULL 
+    state_name VARCHAR(20) NOT NULL PRIMARY KEY
 );
-ALTER TABLE State ADD CONSTRAINT state_pk PRIMARY KEY ( state_name );
+
 
 
 
@@ -14,9 +14,9 @@ CREATE TABLE City (
 
 CREATE TABLE Criminal (
   city_name VARCHAR(20) NOT NULL REFERENCES City(city_name),
-  shoot_id NUMBER(10, 0) NOT NULL,
+  shoot_id NUMBER(10, 0) NOT NULL PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
-  date_ timestamp NOT NULL PRIMARY KEY,
+  date_ timestamp NOT NULL,
   manner_of_death VARCHAR(50),
   armed VARCHAR(50),
   age NUMBER(3, 0) NOT NULL,
