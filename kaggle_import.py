@@ -43,7 +43,7 @@ try:
             
             
         if city not in cities:
-            cities_query = "INSERT INTO City (state_name, city_name) VALUES (:state_name, city_name)"
+            cities_query = "INSERT INTO City (state_name, city_name) VALUES (:state_name, :city_name)"
             cursor.execute(cities_query, state_name=state, city_name=city)
             cities.append(city)
         
