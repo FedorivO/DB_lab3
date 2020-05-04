@@ -48,7 +48,7 @@ try:
 
         insert_query = """INSERT INTO Person(name, date_,manner_of_death,age,gender_name)
             VALUES (:name, TO_DATE(:date_,'yyyy-mm-dd'), :manner_of_death, :age, :gender_name)"""
-        cursor.execute(name=name, date_=date_ , manner_of_death=manner_of_death, age=age, gender_name=gender_name)
+        cursor.execute(insert_query, name=name, date_=date_ , manner_of_death=manner_of_death, age=age, gender_name=gender_name)
         
         insert_query = """INSERT INTO Criminal(city_name, shoot_id, name, date_, manner_of_death, armed, age, gender_name)
             VALUES (:city_name, :shoot_id, :name, TO_DATE(:date_,'yyyy-mm-dd'), :manner_of_death, :armed, :age, :gender_name)"""
