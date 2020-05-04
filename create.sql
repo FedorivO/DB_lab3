@@ -34,6 +34,3 @@ CREATE TABLE Person (
     gender_name VARCHAR(6) NOT NULL
 );
 
-CREATE TABLE Gender (
-    gender_name VARCHAR(6) NOT NULL PRIMARY KEY
-);
