@@ -1,5 +1,5 @@
 import cx_Oracle
-from csv import reader
+import csv
 
 username = 'user2'
 password = 'user2'
@@ -26,7 +26,7 @@ try:
         row_num += 1
         name = row['name']
         city_name = row['city']
-        date_ = int(row['date'])
+        date_ = (row['date'])
         manner_of_death = (row['manner_of_death'])
         armed = (row['armed'])
         age = int(row['age'])
@@ -41,7 +41,7 @@ try:
 
         
         insert_query = """INSERT INTO Criminal(city_name, shoot_id, name, date_, manner_of_death, armed, age, gender_name)
-            VALUES (:city_name, :shoot_id, :name, :date_, :manner_of_death, :armed, :age, :gender_name)"""
+            VALUES (:city_name, :shoot_id, :name, TO_DATE(:date_,'yyyy-mm-dd'), :manner_of_death, :armed, :age, :gender_name)"""
         cursor.execute(insert_query, city_name=city_name, shoot_id=shoot_id, name=name, date_=date_, manner_of_death=manner_of_death, armed=armed, age=age, gender_name=gender_name)	
 
         insert_query = """INSERT INTO City(state_name, city_name)
@@ -49,7 +49,7 @@ try:
         cursor.execute(insert_query, state_name=state_name, city_name=city_name)		
 
         insert_query = """INSERT INTO Person(name, date_,manner_of_death,age,gender_name)
-            VALUES (:name, :date_, :manner_of_death, :age, :gender_name)"""
+            VALUES (:name, :TO_DATE(:date_,'yyyy-mm-dd'), :manner_of_death, :age, :gender_name)"""
         cursor.execute(name=name, date_=date_ , manner_of_death=manner_of_death, age=age, gender_name=gender_name)
 
 
