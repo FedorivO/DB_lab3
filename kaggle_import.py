@@ -1,5 +1,6 @@
 import cx_Oracle
 import csv
+import re
 
 username = 'user2'
 password = 'user2'
@@ -19,6 +20,16 @@ filename = "fatal-police-shootings-data.csv"
 
 file = open('fatal-police-shootings-data.csv', errors='ignore')
 reader = csv.DictReader(file, delimiter=',')
+  
+def is_int(num):
+	regex = '^[+-]?[0-9]+$'
+	if re.search(regex, num):
+		return True
+	return False  
+  
+  
+  
+  
   
 
 try:
@@ -53,6 +64,10 @@ try:
             VALUES (:name, TO_DATE(:date_,'yyyy-mm-dd'), :manner_of_death, :age, :gender_name)"
             cursor.execute(dates_query, name=name, date_=date_ , manner_of_death=manner_of_death, age=age, gender_name=gender_name)
             dates.append(date_)
+            if is_int(age):
+              age = int(age)
+            else:
+              age = 0.1
 
         
         insert_query = """INSERT INTO Criminal(city_name, shoot_id, name, date_, manner_of_death, armed, age, gender_name)
