@@ -1,6 +1,6 @@
 CREATE VIEW criminal_city AS
     SELECT
-       city.city_name_,
+       city.city_name,
        criminal.shoot_id,
        criminal.date_
     FROM
