@@ -30,7 +30,7 @@ try:
         
         shoot_id = row_num
         row_num += 1
-        name = row['name']
+        name_ = row['name']
         city = row['city']
         date_ = (row['date'])
         manner_of_death = (row['manner_of_death'])
@@ -53,9 +53,9 @@ try:
             cities.append(city)
          
         if date_ not in dates:
-            dates_query = "INSERT INTO Person (name, date_,manner_of_death,age,gender_name) 
-            VALUES (:name, TO_DATE(:date_,'yyyy-mm-dd'), :manner_of_death, :age, :gender_name)"
-            cursor.execute(dates_query, name=name, date_=date_ , manner_of_death=manner_of_death, age=age, gender_name=gender_name)
+            dates_query = "INSERT INTO Person (name_, date_,manner_of_death,age,gender_name) 
+            VALUES (:name_, TO_DATE(:date_,'yyyy-mm-dd'), :manner_of_death, :age, :gender_name)"
+            cursor.execute(dates_query, name_=name_, date_=date_ , manner_of_death=manner_of_death, age=age, gender_name=gender_name)
             dates.append(date_)
             if is_int(age)= True:
             	age = int(age)
@@ -63,9 +63,9 @@ try:
               age = 0.1
 
         
-        insert_query = """INSERT INTO Criminal(city_name, shoot_id, name, date_, manner_of_death, armed, age, gender_name)
-            VALUES (:city_name, :shoot_id, :name, TO_DATE(:date_,'yyyy-mm-dd'), :manner_of_death, :armed, :age, :gender_name)"""
-        cursor.execute(insert_query, city_name=city_name, shoot_id=shoot_id, name=name, date_=date_, manner_of_death=manner_of_death, armed=armed, age=age, gender_name=gender_name)  
+        insert_query = """INSERT INTO Criminal(city_name, shoot_id, name_, date_, manner_of_death, armed, age, gender_name)
+            VALUES (:city_name, :shoot_id, :name_, TO_DATE(:date_,'yyyy-mm-dd'), :manner_of_death, :armed, :age, :gender_name)"""
+        cursor.execute(insert_query, city_name=city_name, shoot_id=shoot_id, name_=name_, date_=date_, manner_of_death=manner_of_death, armed=armed, age=age, gender_name=gender_name)  
 
 
   
