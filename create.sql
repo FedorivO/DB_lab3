@@ -18,7 +18,7 @@ ALTER TABLE City
 
 
 CREATE TABLE Person (
-    name VARCHAR(200) NOT NULL,
+    name_ VARCHAR(200) NOT NULL,
     date_ timestamp,
     manner_of_death VARCHAR(50),
     age NUMBER(3, 0) NOT NULL,
@@ -33,7 +33,7 @@ ALTER TABLE Person
 CREATE TABLE Criminal (
   city_name VARCHAR(200) NOT NULL,
   shoot_id NUMBER(10, 0) NOT NULL,
-  name VARCHAR(200) NOT NULL,
+  name_ VARCHAR(200) NOT NULL,
   date_ TIMESTAMP NOT NULL,
   manner_of_death VARCHAR(200),
   armed VARCHAR(200),
